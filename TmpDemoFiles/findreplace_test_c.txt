@@ -1,0 +1,7 @@
+File C
+
+/just/a/sample/path/foldername
+/just/a/sample/path/foldernamewithsomeextension
+rows unique to c:
+c-row/withsometext
+c-row/othertext

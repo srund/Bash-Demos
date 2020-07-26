@@ -1,0 +1,7 @@
+File B
+
+/just/a/sample/path/foldername
+/just/a/sample/path/foldernamewithsomeextension
+rows unique to b:
+b-row/withsometext
+b-row/othertext

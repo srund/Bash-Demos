@@ -1,0 +1,7 @@
+File A-copy
+
+/just/a/sample/path/foldername
+/just/a/sample/path/foldernamewithsomeextension
+rows unique to a:
+a-row/withsometext
+a-row/othertext
