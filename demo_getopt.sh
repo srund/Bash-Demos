@@ -56,15 +56,18 @@ do
 			echo "C-option gotten with arg: $2"
 			shift 2 #
 			;;
-		'-d' | 'd-long' )
-			if [ -n $2]
-			then
-				echo "D-option gotten with arg: $2"
-				shift 2
-			else
-				echo "D-option gotten without arg"
-				shift
-			fi
+		'-d' | 'd-long' )	# Note that optional options need to be
+					# written after the option with no space
+					
+			case "$2" in
+				'')
+					echo "D-option gotten without arg"
+				;;
+				*)
+					echo "D-option gotten with arg: $2"
+				;;
+			esac
+			shift 2 # Need to shift 2 regardless of case for d
 			;;
 		'--') # End of flagged params
 			shift
