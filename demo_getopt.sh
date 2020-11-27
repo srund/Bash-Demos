@@ -5,6 +5,7 @@
 #
 # bash demo_getopt.sh pos1 -abb-argument -d pos2 -c c-arg pos3 pos4
 # bash demo_getopt.sh pos1 -abb-argument -dd-arg -c c-arg pos2 pos3
+#
 ################################################################################
 
 
@@ -44,20 +45,21 @@ unset options # We don't need the options any more.
 while true
 do
 	case "$1" in
-		'-a' | 'a-long' )
+		'-a' | '--a-long' )
 			echo "A-option gotten"
 			shift
 			;;
-		'-b' | 'b-long' )
+		'-b' | '--b-long' )
 			echo "B-option gotten with arg: $2"
 			shift 2 # b has a mandatory option
 			;;
-		'-c' | 'c-long' )
+		'-c' | '--c-long' )
 			echo "C-option gotten with arg: $2"
 			shift 2 #
 			;;
-		'-d' | 'd-long' )	# Note that optional options need to be
-					# written after the option with no space
+		'-d' | '--d-long' )	# Note that optional options need to be
+					# written after the option with =
+					# instead of space
 					
 			case "$2" in
 				'')
