@@ -14,7 +14,7 @@ if [ $UID -eq 0 ]
 	else
 		echo "User ID is $UID <-> the script is not run as root." 
 fi
-exit
+#exit
 
 ## Script params
 FILENAME=""
@@ -41,11 +41,13 @@ do
 		'-a' | '--a-long' )
 			echo "A-option gotten"
 			shift
+			continue
 			;;
 		'-f' | '--file' )
 			echo "F-option gotten"
 			FILENAME=$2
 			shift 2 # b has a mandatory option
+			continue
 			;;
 		'-d' | '--d-long' )	# Note that optional options need to be
 					# written after the option with =
@@ -60,6 +62,7 @@ do
 				;;
 			esac
 			shift 2 # Need to shift 2 regardless of case for d
+			continue
 			;;
 		'--') # End of flagged params
 			shift
@@ -76,7 +79,7 @@ do
 	echo $arg
 done
 ## Verify input
-if [ $FILENAME == '' ]; then
+if [ -z "$FILENAME" ]; then
 	echo "Error filename not defined. Terminating..." >&2
 fi
 ## Program Proper

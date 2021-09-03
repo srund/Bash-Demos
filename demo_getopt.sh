@@ -48,14 +48,17 @@ do
 		'-a' | '--a-long' )
 			echo "A-option gotten"
 			shift
+			continue
 			;;
 		'-b' | '--b-long' )
 			echo "B-option gotten with arg: $2"
 			shift 2 # b has a mandatory option
+			continue
 			;;
 		'-c' | '--c-long' )
 			echo "C-option gotten with arg: $2"
 			shift 2 #
+			continue
 			;;
 		'-d' | '--d-long' )	# Note that optional options need to be
 					# written after the option with =
@@ -70,13 +73,14 @@ do
 				;;
 			esac
 			shift 2 # Need to shift 2 regardless of case for d
+			continue
 			;;
 		'--') # End of flagged params
 			shift
 			break # Break while loop
 			;; # Put here because it doesn't feel right to remove it
 		*)
-			echo "We shouldn't get here. Terminating ..."
+			echo "We shouldn't get here. Terminating ..." >&2
 			exit 1
 	esac
 done
