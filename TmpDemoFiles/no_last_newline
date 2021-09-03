@@ -1,0 +1,6 @@
+This file has no trailing newline.
+Yet it contain several rows.
+The reason the trailing newline is
+removed is to mess with programs or
+functions that require a row to be
+delimited by a newline.
